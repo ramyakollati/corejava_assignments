@@ -1,0 +1,35 @@
+package assignment1_2;
+import java.util.Scanner;
+public class armstrongRange {
+
+	public static void main(String[] args) {
+		armstrongNumberBetween(100,999);
+	}
+	public static boolean isArmstrong(int n) {
+		boolean result=false;
+		
+		int sum=0,rem;
+		int temp=n;
+		 while(temp!=0)
+		 {
+			 rem = temp%10;
+		     sum=sum+(rem*rem*rem);
+		     temp=temp/10;
+		 }
+		 if(sum==n) {
+			 result=true;
+		 }
+		
+		return result;
+	}
+	public static void armstrongNumberBetween(int start,int end) {
+		for(int i=start;i<=end;i++) {
+			if(isArmstrong(i)) {
+				System.out.println("Amstrong number:"+i);
+			}
+		}
+				
+	}
+}
+
+
